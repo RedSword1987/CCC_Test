@@ -77,14 +77,15 @@ public class Test_DBJdbc {
 			}
 			System.out.println();
 
+			// key map返回结果,场景应用： 有唯一标识的一列 对应的一行,一般以主键为key，此行为value
+			Map<Object, Map<String, Object>> map = jdbc.queryKeyMap("select * from temptable where field1 like ?", "FIELD1", "%field1_Valie%");
+			System.out.println("KEY/MAP结果：");
+			for (Entry<Object, Map<String, Object>> en : map.entrySet()) {
+				System.out.println(en.getKey() + ":         " + getMap(en.getValue()));
+			}
+			System.out.println();
+
 		}
-		//
-		// jdbc.queryMap(arg0, arg1);
-		// jdbc.queryListMap(arg0, arg1)
-		//
-		// jdbc.queryKeyMap(arg0, arg1, arg2);
-		//
-		// jdbc.queryBeanPage(arg0, arg1, arg2, arg3, arg4)
-		// jdbc.queryMapPage(arg0, arg1, arg2, arg3);
+
 	}
 }
