@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database-sources>
-	<!-- 平台的表 -->
 	<database-source>
 		<name>default</name>
-		<!--数据库类型 1：sqlserver 2：oracle 3：mysql 4：db2  -->
+		<!--数据库类型 1：sqlserver 2：oracle 3：mysql 4：db2 5:其他  -->
 		<databaseType>1</databaseType>
-		<driverUrl>jdbc:jtds:sqlserver://127.0.0.1:1455/ccw_plat</driverUrl>
+		<driverUrl>jdbc:jtds:sqlserver://127.0.0.1:1433/example_database</driverUrl>
 		<driverClass>net.sourceforge.jtds.jdbc.Driver</driverClass>
 		<user>sa</user>
-		<password>shao</password>
+		<password>RedSword</password>
 		<constantMap showSql="true" logName="" />
 	</database-source>
 	 
 	<database-source>
 		<name>ccw_op</name>
-		<!--数据库类型 1：sqlserver 2：oracle 3：mysql 4：db2  -->
 		<databaseType>1</databaseType>
-		<driverUrl>jdbc:jtds:sqlserver://127.0.0.1:1455/ccw_op</driverUrl>
+		<driverUrl>jdbc:jtds:sqlserver://127.0.0.1:1433/example2_database</driverUrl>
 		<driverClass>net.sourceforge.jtds.jdbc.Driver</driverClass>
 		<user>sa</user>
-		<password>shao</password>
+		<password>RedSword</password>
 		<constantMap showSql="true" logName="" />
 	</database-source>
- 
 </database-sources>
 
