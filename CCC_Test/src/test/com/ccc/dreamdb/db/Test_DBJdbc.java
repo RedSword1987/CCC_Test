@@ -25,6 +25,7 @@ public class Test_DBJdbc {
 	}
 
 	public static void main(String[] args) throws Exception {
+		// TODO
 		DBJdbc jdbc = DBFactory.getDBJdbc();
 
 		if (false) {
