@@ -11,7 +11,8 @@ import com.ccc.dreammail.MailDream;
 
 /**
  * 注意点： <br/>
- * 1.lib下面有个mail.jar，如果程序跑在servlet容器中（tomcat）之类的，可以不加上那个包，如果是jar方式运行，就得得上。<br/>
+ * 1.CCC_Test下，lib下面有个mail.jar，如果程序跑在servlet容器中（tomcat）之类的，可以不加上那个包，如果是jar方式运行，
+ * 就得得上。<br/>
  * 2. 有些邮箱默认没有打开程序发送邮件的接口，还得自己去开一下，各种邮箱怎么开，自己百度就可以找到 <br/>
  * 
  * @author RedSword
