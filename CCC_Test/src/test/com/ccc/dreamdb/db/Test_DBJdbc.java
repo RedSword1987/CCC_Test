@@ -6,6 +6,8 @@ import java.util.Map.Entry;
 
 import com.ccc.dreamdb.db.DBFactory;
 import com.ccc.dreamdb.db.DBJdbc;
+import com.ccc.dreamdb.db.impl.DBJdbcImpl;
+import com.ccc.dreamdb.db.sourcedefine.DatabaseConfig;
 
 /**
  * @author RedSword
@@ -25,8 +27,24 @@ public class Test_DBJdbc {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// TODO
-		DBJdbc jdbc = DBFactory.getDBJdbc();
+		// jdbc有三种初始化方式 1,2两种是配置文件方式，走连接池 3.单个获取connection，然后关闭连接
+		DBJdbc jdbc = null;
+		// 1.默认获取 数据源为 default 的连接
+		jdbc = DBFactory.getDBJdbc();
+		// 2.指定数据源的名称
+		jdbc = DBFactory.getDBJdbc("default");
+
+		// 3.不通过配置文件，知道连接串属性，此种方式是每次单开一个connection再关闭
+		DatabaseConfig databaseconfig = new DatabaseConfig();
+		databaseconfig.setDatabaseType(1);
+		databaseconfig.setDriverClass("net.sourceforge.jtds.jdbc.Driver");
+
+		databaseconfig.setDriverUrl("jdbc:jtds:sqlserver://127.0.0.1:1433/example_database");
+		databaseconfig.setUser("sa");
+		databaseconfig.setPassword("RedSword");
+		jdbc = new DBJdbcImpl(databaseconfig);
+
+		// 下面是测试代码
 
 		if (false) {
 			// 此语句就执行一次，如果表已经创建，就不需要再执行了。
