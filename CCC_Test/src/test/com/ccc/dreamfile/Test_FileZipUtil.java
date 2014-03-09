@@ -18,7 +18,7 @@ public class Test_FileZipUtil {
 		FileZipUtil.unZip("E:\\测试压缩\\1.zip", "E:\\测试压缩\\压缩到");
 		System.out.println("解压一个zip包到某个文件夹(递归解压):");
 		FileZipUtil.unZipDept("E:\\测试压缩\\1.zip", "E:\\测试压缩\\压缩到");
-		System.out.println("解压一个文件夹内部的所有的压缩文件");
+		System.out.println("解压一个文件夹内部的所有的压缩文件(删除原文件)");
 		FileZipUtil.unZipPathDept("E:\\测试压缩");
 
 	}
