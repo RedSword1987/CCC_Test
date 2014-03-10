@@ -8,6 +8,7 @@ import com.ccc.dreamdb.db.DBFactory;
 import com.ccc.dreamdb.db.DBJdbc;
 import com.ccc.dreamdb.db.impl.DBJdbcImpl;
 import com.ccc.dreamdb.db.sourcedefine.DatabaseConfig;
+import com.ccc.dreamlog.LogDream;
 
 /**
  * @author RedSword
@@ -42,6 +43,7 @@ public class Test_DBJdbc {
 		databaseconfig.setDriverUrl("jdbc:jtds:sqlserver://127.0.0.1:1433/example_database");
 		databaseconfig.setUser("sa");
 		databaseconfig.setPassword("RedSword");
+		databaseconfig.setShowSql(true);
 		jdbc = new DBJdbcImpl(databaseconfig);
 
 		// 下面是测试代码
@@ -104,6 +106,7 @@ public class Test_DBJdbc {
 			}
 			System.out.println();
 
+			LogDream.info("111111111111111");
 		}
 
 	}
